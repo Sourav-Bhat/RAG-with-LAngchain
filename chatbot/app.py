@@ -14,6 +14,8 @@ os.environ["OPENAI_API_KEY"]=os.getenv("OPENAI_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"]="true"
 os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
 
+## Prompt template
+
 prompt=ChatPromptTemplate.from_messages(
     [
         ("system","You are a helpful assistant. Please response to the user queries"),
@@ -21,13 +23,13 @@ prompt=ChatPromptTemplate.from_messages(
     ]
 )
 
-## streamlite framework
+## Streamlite framework
 
 st.title('Langchain Demo With OpenAI API')
 input_text = st.text_input("Search the topic you want")
 
 
-#openAI LLM
+## OpenAI LLM
 
 llm=ChatOpenAI(model="gpt-3.5-turbo")
 output_parser=StrOutputParser()
